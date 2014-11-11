@@ -24,26 +24,9 @@ public class WebAppInterface {
         mContext = c;
     }
 
-    /** Show a toast from the web page */
     @JavascriptInterface
-    public String getTorrentNames(boolean liveValues) {
-        JSONArray names = new JSONArray();
-        Document doc = null;
-        try {
-            doc = Jsoup.connect("http://thepiratebay.se/top/207")
-                    .userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36")
-                    .referrer("http://www.google.com").get();
-
-            Elements newsHeadlines = doc.select("a.detLink");
-            for (Element link : newsHeadlines) {
-                names.put(link.text());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Gson gson = new Gson();
-        return gson.toJson(names);
+    public void getTorrentNames(String callback) {
+        new GetTorrentTask().execute(callback);
     }
 }
 
