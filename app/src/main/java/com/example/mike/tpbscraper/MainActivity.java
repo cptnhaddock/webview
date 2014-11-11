@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
 
         mWebView = (WebView) findViewById(R.id.activity_main_webview);
         mWebView.setWebViewClient(new MyWebViewClient());
-        mWebView.addJavascriptInterface(new WebAppInterface(this), "Android");
+        mWebView.addJavascriptInterface(new WebAppInterface(this, mWebView), "Android");
         WebView.setWebContentsDebuggingEnabled(true);
 
         WebSettings webSettings = mWebView.getSettings();
