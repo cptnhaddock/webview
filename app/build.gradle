@@ -25,4 +25,6 @@ dependencies {
     compile files('libs/gson-2.3.jar')
     compile files('/Users/Mike/AndroidStudioProjects/tpbscraper/libs/jsoup-1.8.1.jar')
     compile files('/Users/Mike/AndroidStudioProjects/tpbscraper/libs/GSON-2.3.jar')
+    compile files('C:/dev/github/webview/libs/gson-2.3.jar')
+    compile files('C:/dev/github/webview/libs/jsoup-1.8.1.jar')
 }
